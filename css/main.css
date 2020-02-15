@@ -27,6 +27,11 @@ img {
 
 /* --- body / structure --- */
 
+/*
+- Confused About REM and EM?
+https://j.eremy.net/confused-about-rem-and-em/
+*/
+
 body {
   font-family: Georgia, serif;
   padding: 0 3.5%;
@@ -65,7 +70,6 @@ header p.summary strong {
 
 /* --- figure --- */
 
-
 figure.hero {
   margin: 0 -1.2rem;
 }
@@ -96,15 +100,16 @@ main p {
   margin-bottom: 0;
 }
 
-
-
 #welcome {
   padding: 1em 0;
   border-top: 1px solid #326891;
   border-bottom: 1px solid #326891;
 }
 
-/* https://www.quirksmode.org/css/selectors/ */
+/*
+- CSS Selectors
+https://www.quirksmode.org/css/selectors/
+*/
 
 #welcome + * {
   margin-top: 1.5em;
@@ -178,26 +183,61 @@ p.byline {
 
 /* --- links --- */
 
+/*
+- HTML Color Codes
+https://htmlcolorcodes.com
+- Color Hex: Color encyclopedia providing information about any color.
+https://www.colorhexa.com
+- Color Contrast Checker
+https://marijohannessen.github.io/color-contrast-checker/
+- When do the :hover, :focus, and :active pseudo-classes apply?
+https://bitsofco.de/when-do-the-hover-focus-and-active-pseudo-classes-apply/
+*/
+
 a {
   color: #326891;
 }
 
-a.read-more:after {
+a:hover {
+  color: #000;
+  background-color: #fcf3d8;
+}
+
+a:focus,
+a:active {
+  color: #000;
+  background-color: #f9e7b4;
+}
+
+/*
+- HTML/CSS Symbols → ↓ (Use the symbol ✓ instead of the [HTML] &#x2713; [CSS] \2713 code.)
+https://www.toptal.com/designers/htmlarrows/
+- Understanding CSS Before and After Pseudo-elements
+https://dev.to/finallynero/understanding-css-before-and-after-pseudo-elements-ml0
+*/
+
+a.read-more::after {
   content: "\00A0⇢";
 }
 
-a.back-to-top:after {
+a.back-to-top::after {
   content: "\00A0⇡";
 }
 
 p.byline a {
   color: #000;
+  background-color: transparent;
   text-decoration: none;
   border-bottom: 1px solid #ccc;
 }
 
 p.byline a:hover {
   border-bottom: 0;
+}
+
+p.byline a:focus,
+p.byline a:active {
+  border-bottom: 1px solid #000;
 }
 
 /* --- breakpoint / wider layout --- */
